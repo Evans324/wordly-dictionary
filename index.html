@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wordly Dictionary</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['"Bricolage Grotesque"', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
+          colors: { ink: '#16213a', paper: '#f6f8fb', teal: { brand: '#0f766e' } }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet" />
+</head>
+
+<body class="bg-paper font-sans text-ink antialiased">
+
+  <!-- Header -->
+  <header class="mx-auto flex max-w-5xl items-center justify-between px-6 py-5">
+    <a href="#" class="text-xl font-extrabold tracking-tight">Wordly</a>
+    <nav aria-label="Main" class="flex items-center gap-6 text-sm font-semibold">
+      <a href="#features" class="hover:text-teal-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-teal-brand">Features</a>
+      <a href="#search" class="rounded-full bg-ink px-4 py-2 text-white transition hover:bg-teal-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-brand">Try it</a>
+    </nav>
+  </header>
+
+  <main>
+  
+    <section class="mx-auto grid max-w-5xl items-center gap-12 px-6 py-16 md:grid-cols-2 md:py-24">
+      <div>
+        <h1 class="text-5xl font-extrabold leading-[1.05] tracking-tight md:text-6xl">
+          
+        </h1>
+        <p class="mt-6 max-w-md text-lg text-ink/75">
+          
+        </p>
+
+        <form id="hero-form" action="#search" class="mt-8 flex max-w-md gap-2" role="search">
+          <label for="hero-input" class="sr-only">Search for a word</label>
+          <input id="hero-input" type="text" placeholder="Try “serendipity”"
+            class="w-full rounded-full border border-ink/20 bg-white px-5 py-3 outline-none transition focus:border-teal-brand focus:ring-2 focus:ring-teal-brand/30" />
+          <button type="submit"
+            class="rounded-full bg-teal-brand px-6 py-3 font-semibold text-white transition hover:bg-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-brand">
+            Search
+          </button>
+        </form>
+      </div>
+
+      
+      <article aria-label="Example definition" class="rounded-3xl bg-white p-8 shadow-xl shadow-ink/10 ring-1 ring-ink/5">
+        <div class="flex items-start justify-between">
+          <div>
+            <h2 class="text-4xl font-extrabold tracking-tight">serendipity</h2>
+            <p class="mt-1 text-sm text-ink/60">/ˌsɛɹ.ənˈdɪp.ɪ.ti/</p>
+          </div>
+          <button type="button" aria-label="Play pronunciation"
+            class="grid h-11 w-11 place-items-center rounded-full bg-teal-brand/10 text-teal-brand transition hover:bg-teal-brand hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-teal-brand">
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+        </div>
+        <p class="mt-5 text-sm font-semibold italic text-teal-brand">noun</p>
+        <p class="mt-1 text-ink/85"></p>
+        <p class="mt-3 border-l-2 border-teal-brand/40 pl-3 text-sm text-ink/60">
+          
+        </p>
+        <p class="mt-5 text-sm"><span class="font-semibold">Synonyms:</span> luck, fortune, chance</p>
+      </article>
+    </section>
+
+  
+    <section id="features" class="bg-white py-16">
+      <div class="mx-auto max-w-5xl px-6">
+        <h2 class="max-w-xl text-3xl font-extrabold tracking-tight">Everything you need to learn a word</h2>
+        <div class="mt-10 grid gap-8 md:grid-cols-3">
+          <div>
+            <h3 class="text-lg font-bold">Clear definitions</h3>
+            <p class="mt-2 text-ink/70">Part of speech, meanings and example sentences, straight from a public dictionary API.</p>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold">Hear it spoken</h3>
+            <p class="mt-2 text-ink/70">Play the pronunciation when audio is available, with a written phonetic guide as backup.</p>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold">Save favorites</h3>
+            <p class="mt-2 text-ink/70">Star the words you want to review later. They stay highlighted on your next visit.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="search" class="mx-auto max-w-5xl scroll-mt-4 px-6 py-20">
+      <h2 class="text-3xl font-extrabold tracking-tight">Search the dictionary</h2>
+
+      <form id="search-form" class="mt-6 flex max-w-xl gap-2" role="search" novalidate>
+        <label for="search-input" class="sr-only">Word to look up</label>
+        <input id="search-input" type="text" autocomplete="off" placeholder="Type a word"
+          class="w-full rounded-full border border-ink/20 bg-white px-5 py-3 outline-none transition focus:border-teal-brand focus:ring-2 focus:ring-teal-brand/30" />
+        <button type="submit"
+          class="rounded-full bg-ink px-6 py-3 font-semibold text-white transition hover:bg-teal-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-brand">
+          Search
+        </button>
+      </form>
+
+      <p id="message" role="alert" class="mt-4 hidden max-w-xl rounded-xl bg-red-50 px-4 py-3 text-red-800"></p>
+
+      <div id="results" aria-live="polite" class="mt-8">
+        <p class="rounded-2xl border border-dashed border-ink/25 p-10 text-center text-ink/50">
+          Search for a word to see its definitions here.
+        </p>
+      </div>
+
+      <div class="mt-12">
+        <h3 class="text-xl font-bold">Saved words</h3>
+        <ul id="favorites-list" class="mt-4 flex flex-wrap gap-2" aria-label="Saved words"></ul>
+        <p id="favorites-empty" class="mt-2 text-ink/60">No saved words yet. Star a word to keep it here.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-ink/10 py-8 text-center text-sm text-ink/60">
+    Wordly Dictionary. MITEI.
+  </footer>
+
+  
+  <script type="module" src="script.js"></script>
+</body>
+</html>
